@@ -1,0 +1,223 @@
+printing element of an array using range :
+
+l=['a','b',5,90];
+for i in range(3) :
+    print (l[i]) 
+Enumerate Functions :
+It takes two parameters and can print the value of an array along with it's indices 
+l= [18, 20,2100];
+
+for i,v in enumerate(l) :
+	print('the index is %s and value is %d' %(i,v));
+
+    
+Insertion and deletion in array : 
+l=['a','b',5,90];
+l.append('bee'); # insertion
+l.append(4);
+l.remove(4);  # deletion (this remove the first occurance of that value)
+
+l.insert(0,'love'); # insertion at specific element 
+print (l)  # printing all the elements 
+
+del l[2];  # deletion through particular index 
+print (l)  # printing all the elements 
+
+
+Building list of list/ 2D array :
+
+list = [
+    ['am','jam '] , #0 [0,1]
+    ['begun','sosa'] , #1
+    ['goru','khasi','vera'] #2 [0,1,2]
+    ];
+print (list[1][1]); 
+
+Negative indexing in list of list :
+
+ar=[
+    ['one','two1'],
+    ['three','four']
+    ];
+print (ar[1][-2]); #will print three 
+
+Set:
+
+set={'eee','pharm','mba','bba'};
+print (set)
+o/p : {'mba', 'pharm', 'bba', 'eee'}  # This randomness is generating due to the hashing algorithm of our machine  .
+
+
+Inserting elements in Set :
+
+set={'a'};
+set.add('b'); # Adding in set 
+print (set);
+set.add('b'); # It will not include an element twice if it already exist in set .
+print (set);
+
+Checking an element's existance in set : 
+print ('b' in set) # This function returns a boolean about the element's existance 
+
+
+Dictionary :
+l= {'pranta':18,'maruf':180};
+print (l['maruf']);
+print (type(l))
+print (l.get('pranta'))  # This get method returns the value of particular index of a dictionary 
+print (l.keys())         # This is used to trace keys of a set /list 
+
+Alternative ways of variable printing in line 
+l= {'pranta':18, 20:2100};
+
+for i in l :
+    ind=l[i];
+    
+    print('the index is %s and value is %d ' %(i,ind)) #This is another way of concatinating variables in line .
+
+Items to print all the values of a set along with indics :
+l= {'pi':18, 20:2100};
+
+for i,v in l.items() :
+    print('the index is %s and value is %d' %(i,v));
+
+
+
+Slicing Array :
+ar= [0,2,3,5,6,7,8];
+print (ar[0:4]);
+print (ar[2:-2]);
+
+
+List-Zip FUnctions :
+
+It is used to print the elements of multiple array . 
+ a=['alu','barracuda'];
+ b=['vesa','kulu'];
+ c=['tapla','para'];
+ d=['setanom','setloier'];
+
+ print (list(zip(a,b)))
+
+>>> [('alu', 'vesa'), ('barracuda', 'kulu')]
+
+ print (list(zip(a,b,c)))
+>>>[('alu', 'vesa', 'tapla'), ('barracuda', 'kulu', 'para')]
+
+ print(list(zip(a,b,c,d)))
+>>> [('alu', 'vesa', 'tapla', 'setanom'), ('barracuda', 'kulu', 'para', 'setloier')]
+  e=['sana','shukur'];
+  print (list(zip(a,b,c,d,e)))
+>>> [('alu', 'vesa', 'tapla', 'setanom', 'sana'), ('barracuda', 'kulu', 'para', 'setloier', 'shukur')]
+
+  f=['katla','mesa',334,'kurdugu'];
+  print (list(zip(a,b,c,d,e,f)))
+>>> [('alu', 'vesa', 'tapla', 'setanom', 'sana', 'katla'), ('barracuda', 'kulu', 'para', 'setloier', 'shukur', 'mesa')]  
+# It excluded if the index doesn't match . That means 
+
+
+printing the element's of 2 arrays through a for loop with zip function :
+l=['a','b'];
+k=['c','d'];
+for i,v in zip(l,k) :
+    print (i,v);
+
+
+printing the element's of several arrays through a for loop with zip function :
+In here it will print only the common correspodent indices . If the correspodent isn't found in any array then it will not print .
+l=['a','b'];
+k=['c','d'];
+h=['e','f'];
+p=['s','h'];
+for i,v,g,j in zip(l,k,h,p) :
+    print (i,v,g,j);
+
+
+Copying the elements of an array in another one  : 
+  a= [1,2,3];
+  a2=[];
+
+  a2= [ i for i in a ];
+  print (a2)
+ >>> [1, 2, 3]
+  a2= [ i**2 for i in a ];
+  print (a2)
+ >>> [1, 4, 9]
+  another types of operation 
+  a=[1,2,3,4]
+  a2=[]
+  a2= [i-1 for i in a ];
+  print (a2);
+  
+Restricting  the operation based on a condition :
+  a=[1,2,3,4]
+  a2=[]
+  a2= [i**2 for i in a  if i==2 ]; # structure of this : [ operation for var in arrayname condition ]
+  print (a2);
+
+Creating set in a customize way : 
+
+  a={ d:d+1 for d in range (4) }
+  print (a);
+  for i in a :
+    print (f' index : {i} and values :{a[i]}');
+
+>>> 
+	{0: 1, 1: 2, 2: 3, 3: 4}
+	index : 0 and values :1
+	index : 1 and values :2
+	index : 2 and values :3
+	index : 3 and values :4
+
+
+To set the range of iteration based on an array and elements from that array : 
+set = [1,2];
+
+a={ d:d+10 for d in set }
+a={ (d,d*2):d+10 for d in set }       # we can also do this .Tuples are allowed as a key to use 
+print (a);
+for i in a :
+    print (f' index : {i} and values :{a[i]}');
+print (a[2,4]) # through this we can print any index that are in the newly created  array 
+
+NumPy :
+	import numpy as np;  #importing the numpy package 
+	a=np.array([[41,2] ,[42,5]]);  # The [ should be enclosed as the number of rank/dimension like for 3 it should be : a=[[[[1,2],[3,4]]]]
+	print(a[0][1]);
+
+
+To create an array with all 0's
+	import numpy as n;
+	a=n.zeros((2,2));
+To create an array with all 1's
+	b=n.ones((3,3)); # ((row,col))
+To create an array with all 6's / any number
+	c=n.full((3,3),6);  # ((row,col),elements through which the array will be fulfilled .)
+To create an array of identity /square matrix based on the inputs 
+	a=np.eye(3);   # (number of generating identity matrix . N.B. : There will be diagonally 1's and rest of all are 0's
+To create an array with all random numbers between (0-1) : 	
+	d=np.random.random((2,3));
+	print(a);
+
+To slice a numpy ranked array and print : 
+	import numpy as np;
+	a=np.array([[1,2,4],[56,78,243],[1,456,213]]); # declaring the array
+	b= a[0:2,0:2];	# Structure : arrayname[strarting row : ending row (till 1 index before of ending this it will slice )  , starting column: ending column (till 1 index before of ending  this it will slice ) ]
+	#It will slice till (n-1) ; n=ending column
+	#slicing the array and storing in b . 
+	
+	print (b);
+
+
+Replacement of array's element if we create any subarray through that :
+
+	import numpy as np;
+	a=np.array([[1,2,4],[56,78,243],[1,456,213]]);
+	b=a[0:2,0:2];
+	print (b)
+	b[0,1] = 546; # In python if any subarray is created from any array .Then if any element of the subarray is changed ,
+	#then it also replace that index of the base array 
+	#the b[0,1] was a[0,1] thats why it will be replace by the new 546 
+	
+	print (a);  # the base arrays element was replaced .
+	
